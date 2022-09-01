@@ -8,11 +8,10 @@ for i = id_seq
     opt_int_id = app.CAN_ID_cell.(P);
     fig_id = opt_int_id.id(1);
     table_bl_dbc = table([7 6 5 4 3 2 1 0 15 14 13 12 11 10 9 8 23 22 21 20 19 18 17 16 31 30 29 28 27 26 25 24 39 38 37 36 35 34 33 32 47 46 45 44 43 42 41 40 55 54 53 52 51 50 49 48 63 62 61 60 59 58 57 56 ]',[1:64]','VariableNames',{'dbc_Sta','bl_sta',});
-    %switch语句
     switch opt_int_moto
         case 'Intel'
             opt_int_id.x09= [opt_int_id.x08,opt_int_id.x07,opt_int_id.x06,opt_int_id.x05,opt_int_id.x04,opt_int_id.x03,opt_int_id.x02,opt_int_id.x01];
-            for range_bit = amount_seq    %       start_bit = 64-input('请输入起始位（范围0-63）：');
+            for range_bit = amount_seq    
                 for start_bit = range_bit:64
                     a = opt_int_id{:,12};
                     b = a(:,start_bit-range_bit+1:start_bit);
